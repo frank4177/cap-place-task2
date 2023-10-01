@@ -1,0 +1,103 @@
+.dropDown{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* width: 100%; */
+    width: 300px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 3px 0px 15px -1px rgba(0,0,0,0.1);
+    height: 40px;
+    border-radius: 10px;
+  }
+  
+
+  .titleWrap{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .selectedText{
+    font-size: 15px;
+    color: #1D4ED8;
+    font-weight: 500;
+  }
+
+  .titlePlaceholder{
+    font-size: 13px;
+    color: gray;
+  }
+
+  .icon{
+    color: black;
+  }
+  
+  .itemsWrap{
+    position: absolute;
+    width: 100%;
+    background-color:white;
+    border-radius: 4px;
+    top:40px;
+    height: 150px;
+    overflow-y: auto;
+    align-self: center;
+    z-index: 9;
+    box-shadow: 3px 0px 15px -1px rgba(0,0,0,0.1);
+    transition: .5s linear;
+  }
+  
+  
+  .items{
+    font-size: 14px;
+    padding: 8px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    height: 50px;
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+  }
+
+  .leftText{
+    padding: 3px 10px;
+    background-color: rgba(232, 230, 230, 0.657);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .items:hover{
+    background-color: #E9EFFF;
+    color: #1D4ED8;
+  }
+
+  .items:hover .leftText{
+    background-color: #D1DDFF;
+  }
+  
+  
+  /* width scrollbar */
+  .dropDown ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track scrollbar*/
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle scrollbar*/
+  ::-webkit-scrollbar-thumb {
+    background-color: gray; 
+    border-radius: 10px;
+  }
+
