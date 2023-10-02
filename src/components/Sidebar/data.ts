@@ -1,4 +1,4 @@
-import { share, calender, people, pad, note, heart, house} from "../icons"
+import { share, calender, people, pad, note, heart, house, arrowLeft} from "../icons"
 
 
 type menuType = {
@@ -14,6 +14,6 @@ export const sidebarMenu: menuType[] = [
     {icon: note, alt: "note icon"},
     {icon: pad, alt: "pad icon"},
     {icon: heart, alt: "heart icon"},
-    // {icon: arrowLeft, alt: "arrowLeft icon"},
+    {icon: arrowLeft, alt: "arrowLeft icon"},
 ]
 

@@ -12,6 +12,7 @@ import userCheck from "../../assets/images/userCheck.svg"
 import userSpeak from "../../assets/images/userSpeak.svg"
 import mail from "../../assets/images/mail.svg"
 import arrowDown from "../../assets/images/arrowDown.svg"
+import settings from "../../assets/images/settings.svg"
 
 
-export {share, calender, people, pad, note, arrowLeft, heart, house, tag, mail, userCancel, userCheck, userSpeak, arrowDown}
+export {share, calender, people, pad, note, arrowLeft, heart, house, tag, mail, userCancel, userCheck, userSpeak, arrowDown, settings}
