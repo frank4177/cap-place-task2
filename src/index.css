@@ -20,7 +20,7 @@ h4 {
   padding: 0;
 }
 
-:where(.css-dev-only-do-not-override-pr0fja).ant-btn{
+:where(.css-pr0fja).ant-btn-primary{
   background-color:#1D5ECD ;
   height: 40px;
 }
