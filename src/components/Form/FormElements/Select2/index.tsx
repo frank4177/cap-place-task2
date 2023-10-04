@@ -1,10 +1,7 @@
 import { useState } from "react";
 import styles from "./index.module.css";
-import { DownOutlined } from "@ant-design/icons";
+import { arrowDown } from "../../../icons";
 
-// const data = [
-//   {id: 1, title:"www", number:"344"}
-// ]
 
 const Select = () => {
   // const { options, title, placeHolder, handleChange } = props;
@@ -18,7 +15,6 @@ const Select = () => {
   return (
     <>
       <div>
-        {/* <p className="text-[14px] font-bold mb-1">nice</p> */}
         <div
           className={styles.dropDown}
           onClick={() => setOpenDrop(!openDrop)}
@@ -32,7 +28,7 @@ const Select = () => {
             ) : (
               <span className={styles.titlePlaceholder}>Select</span>
             )}
-            <DownOutlined />
+            <img src={arrowDown}/>
           </div>
 
           {/* MAP THROUGH OPTIONS */}
