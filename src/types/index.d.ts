@@ -17,6 +17,8 @@ type Education = {
     id: number;
     name: string
     location?: string;
+    plays?: string;
+    programs?: string;
     
     school?: string;
     hashTag?: Tag[];

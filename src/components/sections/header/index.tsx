@@ -16,14 +16,14 @@ const Header = () => {
     <>
       <div className="flex flex-row items-center justify-between  min-h-[100px]">
         <div>
-          <p className="text-[22px] font-bold text-[#1D4ED8]">London Internship Program</p>
+          <p className="text-[20px] font-bold text-[#1D4ED8]">London Internship Program</p>
           <p className="text-[14px]">London</p>
         </div>
         <Select/>
 
         <div className="flex flex-row gap-3">
           {userButtons.map((item)=>(
-            <div className="w-[60px] rounded-[10px] cursor-pointer flex flex-col justify-center items-center h-[50px] bg-white" key={item.alt}>
+            <div className="w-[45px] rounded-[10px] cursor-pointer flex flex-col justify-center items-center h-[35px] bg-white" key={item.alt}>
             <img src={item.icon} alt={item.alt} className="w-6 h-6"/>
           </div>
           ))}

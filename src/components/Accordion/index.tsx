@@ -1,7 +1,8 @@
-import {  DownOutlined ,FileOutlined} from '@ant-design/icons';
+import {  DownOutlined} from '@ant-design/icons';
 import React, { useState } from 'react';
 import type { CollapseProps } from 'antd';
 import { Collapse, } from 'antd';
+import { note } from '../icons';
 
 
 
@@ -57,7 +58,7 @@ const Accordion: React.FC = () => {
   return (
     <>
       <Collapse
-        expandIcon={({  }) => <FileOutlined  />}
+        expandIcon={({  }) => <img src={note} className='w-3 h-4'/>}
         onChange={onChange}
         expandIconPosition={expandIconPosition}
         items={items}

@@ -14,6 +14,7 @@ import mail from "../../assets/images/mail.svg"
 import arrowDown from "../../assets/images/arrowDown.svg"
 import settings from "../../assets/images/settings.svg"
 import play from "../../assets/images/play.svg"
+import pad2 from "../../assets/images/pad2.svg"
 
 
-export {share, calender, people, pad, note, arrowLeft, heart, house, tag, mail, userCancel, userCheck, userSpeak, arrowDown, settings, play}
+export {share, calender, people, pad, note, arrowLeft, heart, house, tag, mail, userCancel, userCheck, userSpeak, arrowDown, settings, play, pad2}

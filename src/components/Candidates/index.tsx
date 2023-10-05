@@ -1,67 +1,17 @@
 import { useState } from "react";
+import { pad2, play } from "../icons";
+import { data } from "../../utils/constants";
 
-function Candidates() {
+interface props{
+  filteredData?: UserData[]
+}
+
+
+function Candidates({filteredData}: props) {
   const [selectAll, setSelectAll] = useState(false);
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
-  const data: UserData[] = [
-    {
-      id: 1,
-      name: "Aaliyah Sanderson",
-      location: "Riyadh, Saudi Arabia",
-      school: "Bachelor - Cambridge University (2023 - 2023)",
-      hashTag: [
-        { tag: "#top_candidate", id: "1" },
-        { tag: "#topcandidate", id: "2" },
-      ],
-      interest: [
-        { like: "Newyork", id: "2" },
-        { like: "Marketing", id: "4" },
-      ],
-    },
-    {
-      id: 2,
-      name: "Joe Jhon",
-      location: "Riyadh, Saudi Arabia",
-      school: "Bachelor - Cambridge University (2023 - 2023)",
-      hashTag: [
-        { tag: "#top_candidate", id: "1" },
-        { tag: "#topcandidate", id: "2" },
-      ],
-      interest: [
-        { like: "Newyork", id: "2" },
-        { like: "Marketing", id: "4" },
-      ],
-    },
-    {
-        id: 3,
-        name: "Thomas Matt",
-        location: "Riyadh, Saudi Arabia",
-        school: "Bachelor - Cambridge University (2023 - 2023)",
-        hashTag: [
-          { tag: "#top_candidate", id: "1" },
-          { tag: "#topcandidate", id: "2" },
-        ],
-        interest: [
-          { like: "Newyork", id: "2" },
-          { like: "Marketing", id: "4" },
-        ],
-      },
-      {
-        id: 4,
-        name: "Kamilia Smith",
-        location: "Riyadh, Saudi Arabia",
-        school: "Bachelor - Cambridge University (2023 - 2023)",
-        hashTag: [
-          { tag: "#top_candidate", id: "1" },
-          { tag: "#topcandidate", id: "2" },
-        ],
-        interest: [
-          { like: "Newyork", id: "2" },
-          { like: "Marketing", id: "4" },
-        ],
-      },
-  ];
+  console.log(filteredData)
 
   const toggleSelectAll = () => {
     setSelectAll(!selectAll);
@@ -121,7 +71,7 @@ function Candidates() {
         </div>
 
         <div className="">
-          {data.map((item) => (
+          {filteredData?.map((item: UserData) => (
             <div
               key={item.id}
               className="flex flex-row items-center gap-5 border-t-[2px] min-h-[200px]"
@@ -141,34 +91,56 @@ function Candidates() {
               </div>
 
               {/* DETAILS */}
-              <div className="flex flex-col gap-3">
-                <p className="font-bold text-[20px]">{item.name}</p>
-                <p className="text-[15px] font-bold">{item.location}</p>
-                <p className="text-[15px]">{item.school}</p>
+              <div className="flex flex-row justify-between">
+                <div className="flex flex-col gap-3">
+                  <p className="font-bold text-[17px]">{item.name}</p>
+                  <p className="text-[14px] font-bold">{item.location}</p>
+                  <p className="text-[14px]">{item.school}</p>
 
-                <div className="flex flex-row gap-3 items-center">
-                  {item.hashTag?.map((tg) => (
-                    <div
-                      className="flex flex-row gap-3 items-center"
-                      key={tg.id}
-                    >
-                      <span className="text-[#1D4ED8]">{tg.tag}</span>
-                    </div>
-                  ))}
-                </div>
+                  <div className="flex flex-row gap-3 items-center">
+                    {item.hashTag?.map((tg) => (
+                      <div
+                        className="flex flex-row gap-3 items-center"
+                        key={tg.id}
+                      >
+                        <span className="text-[#1D4ED8] text-[13px]">
+                          {tg.tag}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
-                <div className="flex flex-row gap-3 items-center">
-                  {item.interest?.map((int) => (
-                    <span className="px-2  bg-cGreenOpacity" key={int.id}>
-                      <p className="font-bold text-cGreenSolid text-[14px]">
-                        {int.like}
-                      </p>
-                    </span>
-                  ))}
+                  <div className="flex flex-row gap-3 items-center">
+                    {item.interest?.map((int) => (
+                      <span className="px-2  bg-cGreenOpacity" key={int.id}>
+                        <p className="font-bold text-cGreenSolid text-[13px]">
+                          {int.like}
+                        </p>
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
+              {/* PLAYS AND PROGRAMS */}
+              {item.plays !== "" && item.programs !== ""? <div className="ml-auto self-start mt-6  flex flex-row items-center gap-3">
+                {/* PLAYS */}
+                <div className="flex flex-row bg-[#D1DDFF]  items-center justify-between gap-1 px-3 py-1 rounded-[10px]">
+                  <img src={play} alt="play" className="w-3 h-3" />
+                  <span className="text-[13px] text-[#1D4ED8] font-[400]">
+                    {item.plays}
+                  </span>
+                </div>
+                {/* PROGRAMS */}
+                <div className="flex flex-row bg-[#D1DDFF]  items-center justify-between gap-1 px-2 py-1 rounded-[10px]">
+                  <img src={pad2} alt="play" className="w-5 h-5" />
+                  <span className="text-[13px] text-[#1D4ED8] font-[400]">
+                    {item.programs}
+                  </span>
+                </div>
+              </div> : null}
             </div>
           ))}
+          {filteredData?.length == 0 ?<div className="text-center text-[19px]">No results found</div>: null}
         </div>
       </div>
     </>
