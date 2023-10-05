@@ -12,7 +12,7 @@ const Sidebar = () => {
       <div className="w-[7%] flex flex-col gap-2 h-full  items-center p-5 fixed shadow-bs">
         <div className="h-9 w-9 rounded-[50%] bg-gray-300 mb-6"></div>
 
-        <div className="flex flex-col justify-between h-[350px]">
+        <div className="flex flex-col justify-between h-[410px]">
           {sidebarMenu.map((item) => (
             <div
               className={` w-[50px] h-[50px] cursor-pointer ${active === item.alt ? hover : null}  rounded-[10px] flex flex-col items-center justify-center `}
